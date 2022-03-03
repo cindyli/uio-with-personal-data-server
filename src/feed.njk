@@ -1,0 +1,33 @@
+---
+pagination:
+  data: config.languages
+  size: 1
+  alias: language
+permalink: "{% if language !== config.defaultLanguage %}/{{ config.languages[language].slug }}{% endif %}/feed.xml"
+---
+{% set collection = "postFeed_" + language %}
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom" xml:lang="{{ language }}">
+    <title>{{ site[language].name }}</title>
+    <subtitle>{{ translations[language][summary] | replace("%s", site[language].name) }}</subtitle>
+    <link href="{{ config.url }}{% if language !== config.defaultLanguage %}/{{ config.languages[language].slug }}{% endif %}/feed.xml" rel="self"/>
+    <link href="{{ config.url }}{% if language !== config.defaultLanguage %}/{{ config.languages[language].slug }}{% endif %}"/>
+    <updated>{{ collections[collection] | rssLastUpdatedDate }}</updated>
+    <id>{{ config.url }}</id>
+    <author>
+        <name>{{ site[language].authorName }}</name>
+        <email>{{ site[language].authorEmail }}</email>
+    </author>
+    {% for post in collections[collection] %}
+        {% set absolutePostUrl %}{{ config.url }}{{ post.url | url }}{% endset %}
+    <entry>
+        <title>{{ post.data.title }}</title>
+        <link href="{{ absolutePostUrl }}"/>
+        <updated>{{ post.date | rssDate }}</updated>
+        <id>{{ absolutePostUrl }}</id>
+        <content type="html"><![CDATA[
+        {{ post.templateContent | safe }}
+        ]]></content>
+    </entry>
+    {% endfor %}
+</feed>
