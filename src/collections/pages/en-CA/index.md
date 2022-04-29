@@ -1,5 +1,5 @@
 ---
-title: Home
+title: Connect UIO with Personal Data Server
 order: 1
 ---
-You can write content for your page in [Markdown](https://www.11ty.dev/docs/languages/markdown/) format.
+Connect UIO with Personal Data Server.

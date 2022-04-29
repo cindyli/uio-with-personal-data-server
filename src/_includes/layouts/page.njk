@@ -11,5 +11,9 @@
 {% block content %}
 <div class="content">
     {{ content | safe }}
+    <button id="login">Login Personal Data Server</button>
+    <button id="get_prefs">Get Preferences</button>
+    <button id="save_prefs">Save Preferences</button>
+    <div id="preferences" style="padding: 2rem"></div>
 </div>
 {% endblock %}
