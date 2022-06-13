@@ -9,7 +9,7 @@ exports.handler = async function(event, context, callback) {
         const preferences = JSON.parse(uiSettings).preferences || {};
         const loginToken = utils.getCookieValue(event.headers.cookie, "PDS_loginToken");
 
-        const result = await axios.post("http://localhost:3000/save_prefs", preferences || {}, {
+        const result = await axios.post("https://pds.fluidproject.org/save_prefs", preferences || {}, {
             headers: {
                 "Authorization": "Bearer " + loginToken
             }

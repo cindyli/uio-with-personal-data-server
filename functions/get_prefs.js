@@ -6,7 +6,7 @@ const utils = require("./utils.js");
 exports.handler = async function(event, context, callback) {
     const loginToken = utils.getCookieValue(event.headers.cookie, "PDS_loginToken");
 
-    const preferences = await axios.get("http://localhost:3000/get_prefs", {
+    const preferences = await axios.get("https://pds.fluidproject.org/get_prefs", {
         headers: {
             "Authorization": "Bearer " + loginToken
         }

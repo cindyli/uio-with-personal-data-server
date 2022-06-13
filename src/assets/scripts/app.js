@@ -15,7 +15,7 @@ https://github.com/fluid-project/trivet/raw/master/LICENSE.md.
 // If your website needs custom JavaScript, put it here.
 
 document.getElementById("login").addEventListener("click", () => {
-    window.location.href = "http://localhost:3000/sso/google";
+    window.location.href = "https://pds.fluidproject.org/sso/google";
 });
 
 document.getElementById("get_prefs").addEventListener("click", () => {
