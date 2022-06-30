@@ -7,3 +7,12 @@
 body {
     font-family: var(--base-font-family);
 }
+
+main {
+    margin: 2rem;
+}
+
+button {
+    margin: 2rem;
+    padding: 1rem;
+}

@@ -1,5 +1,4 @@
 ---
-title: Connect UIO with Personal Data Server
+title: Edge Proxy Example
 order: 1
 ---
-Connect UIO with Personal Data Server.
