@@ -16,6 +16,7 @@ exports.handler = async function(event, context, callback) {
             })
         };
     } else {
+        event.queryStringParameters = {};
         return {
             statusCode: 302,
             headers: {
