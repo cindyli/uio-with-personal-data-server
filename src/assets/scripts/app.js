@@ -14,7 +14,7 @@ https://github.com/fluid-project/trivet/raw/master/LICENSE.md.
 
 // If your website needs custom JavaScript, put it here.
 
-const pdsServer = "https://pds.fluidproject.org/";
+const pdsServer = "https://pds.fluidproject.org";
 
 document.getElementById("login").addEventListener("click", () => {
     window.location.href = pdsServer + "/sso/google";
