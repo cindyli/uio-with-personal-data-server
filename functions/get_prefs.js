@@ -2,7 +2,7 @@
 
 const axios = require("axios");
 const utils = require("./utils.js");
-const pdsServer = "https://pds.fluidproject.org/";
+const pdsServer = "https://pds.fluidproject.org";
 
 exports.handler = async function(event, context, callback) {
     console.log("=== event.headers.cookie: ", event.headers.cookie);
@@ -15,6 +15,7 @@ exports.handler = async function(event, context, callback) {
         };
     } else {
         const loginToken = utils.getCookieValue(event.headers.cookie, "PDS_loginToken");
+        console.log("=== loginToken: ", loginToken);
         if (!loginToken) {
             return {
                 statusCode: 401,

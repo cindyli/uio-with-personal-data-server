@@ -2,7 +2,7 @@
 
 const axios = require("axios");
 const utils = require("./utils.js");
-const pdsServer = "https://pds.fluidproject.org/";
+const pdsServer = "https://pds.fluidproject.org";
 
 exports.handler = async function(event, context, callback) {
     try {
