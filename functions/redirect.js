@@ -16,6 +16,7 @@ exports.handler = async function(event, context, callback) {
             })
         };
     } else {
+        console.log("=== refererUrl: ", refererUrl);
         return {
             statusCode: 301,
             headers: {
