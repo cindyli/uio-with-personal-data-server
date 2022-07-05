@@ -20,7 +20,7 @@ exports.handler = async function(event, context, callback) {
         console.log("=== loginToken: ", loginToken);
         console.log("=== maxAge: ", maxAge);
         return {
-            statusCode: 302,
+            statusCode: 301,
             headers: {
                 "Location": refererUrl,
                 "Access-Control-Expose-Headers": "Set-Cookie",
