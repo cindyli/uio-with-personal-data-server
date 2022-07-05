@@ -2,6 +2,7 @@
 
 const axios = require("axios");
 const utils = require("./utils.js");
+const pdsServer = "https://pds.fluidproject.org/";
 
 exports.handler = async function(event, context, callback) {
     try {
@@ -25,7 +26,7 @@ exports.handler = async function(event, context, callback) {
                 const uiSettings = utils.getCookieValue(event.headers.cookie, "fluid-ui-settings");
                 const preferences = JSON.parse(uiSettings).preferences || {};
 
-                const result = await axios.post("http://localhost:3000/save_prefs", preferences || {}, {
+                const result = await axios.post(pdsServer + "/save_prefs", preferences || {}, {
                     headers: {
                         "Authorization": "Bearer " + loginToken
                     }

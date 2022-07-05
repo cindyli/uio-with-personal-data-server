@@ -2,6 +2,7 @@
 
 const axios = require("axios");
 const utils = require("./utils.js");
+const pdsServer = "https://pds.fluidproject.org/";
 
 exports.handler = async function(event, context, callback) {
     if (!event.headers.cookie) {
@@ -21,7 +22,7 @@ exports.handler = async function(event, context, callback) {
                 })
             };
         } else {
-            const preferences = await axios.get("http://localhost:3000/get_prefs", {
+            const preferences = await axios.get(pdsServer + "/get_prefs", {
                 headers: {
                     "Authorization": "Bearer " + loginToken
                 }
