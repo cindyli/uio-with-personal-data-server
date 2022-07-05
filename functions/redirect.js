@@ -7,7 +7,7 @@ exports.handler = async function(event, context, callback) {
     const loginToken = event.queryStringParameters.loginToken;
     const maxAge = event.queryStringParameters.maxAge;
     const refererUrl = event.queryStringParameters.refererUrl;
-console.log("=== event.queryStringParameters: ", event.queryStringParameters);
+
     if (!loginToken || !maxAge || !refererUrl) {
         return {
             statusCode: 401,
@@ -16,9 +16,6 @@ console.log("=== event.queryStringParameters: ", event.queryStringParameters);
             })
         };
     } else {
-        console.log("=== refererUrl: ", refererUrl);
-        console.log("=== loginToken: ", loginToken);
-        console.log("=== maxAge: ", maxAge);
         return {
             statusCode: 301,
             headers: {
