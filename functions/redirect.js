@@ -17,9 +17,10 @@ exports.handler = async function(event, context, callback) {
         };
     } else {
         return {
-            statusCode: 301,
+            statusCode: 302,
             headers: {
                 "Location": refererUrl,
+                "Access-Control-Expose-Headers": "Set-Cookie",
                 "Set-Cookie": "PDS_loginToken=" + loginToken + "; Path=/; Max-Age=" + maxAge
             }
         };
