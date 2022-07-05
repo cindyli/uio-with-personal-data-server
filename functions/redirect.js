@@ -21,7 +21,6 @@ exports.handler = async function(event, context, callback) {
             statusCode: 301,
             headers: {
                 "Location": refererUrl,
-                "Access-Control-Expose-Headers": "Set-Cookie",
                 "Set-Cookie": "PDS_loginToken=" + loginToken + "; Path=/; Max-Age=" + maxAge
             }
         };
