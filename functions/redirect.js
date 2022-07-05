@@ -16,6 +16,9 @@ exports.handler = async function(event, context, callback) {
             })
         };
     } else {
+        console.log("=== refererUrl: ", refererUrl);
+        console.log("=== loginToken: ", loginToken);
+        console.log("=== maxAge: ", maxAge);
         return {
             statusCode: 302,
             headers: {
