@@ -16,10 +16,12 @@ exports.handler = function(event, context, callback) {
             })
         });
     } else {
+        const redirectUrl = refererUrl.replace(/\/$/, "");
+        console.log("=== redirectUrl: ", redirectUrl);
         return callback(null, {
             statusCode: 302,
             headers: {
-                "Location": refererUrl,
+                "Location": redirectUrl,
                 "Access-Control-Expose-Headers": "Set-Cookie",
                 "Set-Cookie": "PDS_loginToken=" + loginToken + "; Path=/; Max-Age=" + maxAge
             }
