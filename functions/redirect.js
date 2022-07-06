@@ -16,7 +16,7 @@ exports.handler = function(event, context, callback) {
             })
         });
     } else {
-        const redirectUrl = refererUrl.replace(/\/$/, "");
+        const redirectUrl = refererUrl + "?a=a";
         console.log("=== redirectUrl: ", redirectUrl);
         return callback(null, {
             statusCode: 302,
